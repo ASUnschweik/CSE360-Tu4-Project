@@ -275,7 +275,7 @@ public class PersonalRecordsScreen extends GUIScene{
 		Button returnButton = new Button("Return");
 		returnButton.setOnAction(new EventHandler<ActionEvent>() {
 		public void handle(ActionEvent e) {
-			GUIScene.navigateTo(MedicalStaffHomepage.getView());
+			GUIScene.navigateTo(PatientLookupPage.getView()); //MedicalStaffHomepage
 		}
 		});
 		center.getChildren().add(returnButton);
