@@ -32,11 +32,11 @@ public class NurseExamScreen extends GUIScene {
 		
 		
 		Label vitals = new Label("Vitals");
-		Label height = new Label("Height (Inches)");
+		Label height = new Label("Height");
 		TextField heightField = new TextField();
-		Label weight = new Label("Weight (Pounds)");
+		Label weight = new Label("Weight");
 		TextField weightField = new TextField();
-		Label bodyTemp = new Label("Body Temperature (Degrees)");
+		Label bodyTemp = new Label("Body Temperature");
 		TextField bodyTempField = new TextField();
 		Label bloodPressure = new Label("Blood pressure");
 		TextField bloodPressureField = new TextField();
@@ -55,7 +55,7 @@ public class NurseExamScreen extends GUIScene {
 						p.setHeight(Integer.parseInt(s));
 					}
 					else {
-						errorMessage.setText("Invalid height, please enter in inches\n");
+						errorMessage.setText("Invalid height");
 						return;
 					}
 					
@@ -64,7 +64,7 @@ public class NurseExamScreen extends GUIScene {
 						p.setWeight(Integer.parseInt(s));
 					}
 					else {
-						errorMessage.setText("Invalid weight, please enter in pounds\n");
+						errorMessage.setText("invalid weight");
 						return;
 					}
 					
@@ -73,7 +73,7 @@ public class NurseExamScreen extends GUIScene {
 						v.setBodyTemperature(Integer.parseInt(s));
 					}
 					else {
-						errorMessage.setText("Invalid body temperature, please enter in degrees\n");
+						errorMessage.setText("Invalid body temperature");
 						return;
 					}
 					
@@ -87,7 +87,7 @@ public class NurseExamScreen extends GUIScene {
 						v.setBloodPressure(i);
 					}
 					else {
-						errorMessage.setText("Invalid blood pressure(Ex: 190/70)");
+						errorMessage.setText("Invalid blood pressure");
 						return;
 					}
 					

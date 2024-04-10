@@ -37,20 +37,11 @@ public class MedicalStaffHomepage extends GUIScene {
 			}
 		});
 		
-		if(currentUser.getUserType()== UserType.DOCTOR) {
-			messages.setOnAction(new EventHandler<ActionEvent>() {
-				public void handle(ActionEvent e) {
-					navigateTo(MessagesScreenDoctor.getView());
-				}
-			});
-		}
-		else if(currentUser.getUserType()== UserType.NURSE) {
-			messages.setOnAction(new EventHandler<ActionEvent>() {
-				public void handle(ActionEvent e) {
-					navigateTo(MessagesScreenNurse.getView());
-				}
-			});
-		}
+		messages.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent e) {
+				navigateTo(MessagesScreen.getView());
+			}
+		});
 		
 		HBox bottom = new HBox();
 		bottom.getChildren().addAll(patientLookup,messages);

@@ -86,13 +86,14 @@ public class Visit {
     }
     
     public String toString() {
-        return "Visit" +
+    	String temp = "Visit" +
                 "\nBody Temperature:" + bodyTemperature +
                 "\nBlood Pressure:" + bloodPressure[0] +
                 "/" + bloodPressure[1] +
                 "\nPrescriptions: " + prescriptions +
-                "Instructions: " + instructions +
-                "General Notes: " + generalNotes;
+                "Instructions: " + instructions;
+        if(!generalNotes.equals(null)) temp += "General Notes: " + generalNotes; 
+        return temp;
     }
 }
 
