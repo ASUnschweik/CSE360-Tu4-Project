@@ -56,7 +56,14 @@ public class PatientLookupPage extends GUIScene {
 					System.out.print("\n\n\nFirst Name: " + s[0] +"\n\n\nLast name; " +s[1]);
 					User u = UserList.findUser(s[0], s[1]);
 					if(u.getUserType().equals(UserType.PATIENT) && dobField.getValue().isEqual(u.getDateOfBirth())) {
-						if(currentUser.getUserType().equals(UserType.DOCTOR)) GUIScene.navigateTo(DoctorExamScreen.getView(u));
+						if(currentUser.getUserType().equals(UserType.DOCTOR)) {
+							try{ 
+								GUIScene.navigateTo(DoctorExamScreen.getView(u));
+							}
+							catch(Exception e2) {
+								errorMessage.setText("A nurse must examine this patient first");
+							}
+						}
 						else navigateTo(NurseExamScreen.getView(u));
 					}
 						
