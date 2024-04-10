@@ -51,7 +51,7 @@ public class NurseExamScreen extends GUIScene {
 					Visit v = new Visit();
 					
 					String s = heightField.getText();
-					if(s.matches("^[0-9]{2}$")) {
+					if(s.matches("^[0-9]{2}") && s.length()<3) {
 						p.setHeight(Integer.parseInt(s));
 					}
 					else {
@@ -60,7 +60,7 @@ public class NurseExamScreen extends GUIScene {
 					}
 					
 					s = weightField.getText();
-					if(s.matches("^[0-9}{2,3}$")) {
+					if(s.matches("^[0-9]{2,3}")&& s.length()<4) {
 						p.setWeight(Integer.parseInt(s));
 					}
 					else {
@@ -69,7 +69,7 @@ public class NurseExamScreen extends GUIScene {
 					}
 					
 					s = bodyTempField.getText();
-					if(s.matches("^[0-9]{2,3}")) {
+					if(s.matches("^[0-9]{2,3}")&& s.length()<4) {
 						v.setBodyTemperature(Integer.parseInt(s));
 					}
 					else {
@@ -78,7 +78,7 @@ public class NurseExamScreen extends GUIScene {
 					}
 					
 					s = bloodPressureField.getText();
-					if(s.matches("[0-9]{3}\\/{1}[0-9]{2,3}")) {
+					if(s.matches("[0-9]{3}\\/{1}[0-9]{2,3}") && s.length()<10) {
 						String[] s1 = new String[2];
 						s1 = s.split("/",2);
 						int[] i = new int[2];
