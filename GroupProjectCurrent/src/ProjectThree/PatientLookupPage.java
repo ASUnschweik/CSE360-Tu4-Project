@@ -73,9 +73,17 @@ public class PatientLookupPage extends GUIScene {
 				}
 			}
 		});
+
+		Button returnButton = new Button("Return");
+		returnButton.setOnAction(new EventHandler<ActionEvent>() {
+		public void handle(ActionEvent e) {
+			navigateTo(MedicalStaffHomepage.getView());
+		}
+		});
+		
 		
 		HBox bottom = new HBox();
-		bottom.getChildren().addAll(patientRecords,beginExam);
+		bottom.getChildren().addAll(patientRecords,beginExam,returnButton);
 		root.setCenter(bottom);
 		
 		
