@@ -39,7 +39,12 @@ public class MedicalStaffHomepage extends GUIScene {
 		
 		messages.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
-				navigateTo(MessagesScreen.getView());
+				if(currentUser.getUserType().equals(UserType.DOCTOR)) {
+					navigateTo(MessagesScreenDoctor.getView());
+				}
+				else {
+					navigateTo(MessagesScreenNurse.getView());
+				}
 			}
 		});
 		

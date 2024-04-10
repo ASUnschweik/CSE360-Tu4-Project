@@ -11,16 +11,16 @@ import javafx.event.*;
 public class MessagesScreenNurse extends GUIScene{
 	public static Node getView() {
 		VBox root = new VBox();
-		
+
 		Button returnButton = new Button("Return");
 		returnButton.setOnAction(new EventHandler<ActionEvent>() {
 		public void handle(ActionEvent e) {
 			navigateTo(MedicalStaffHomepage.getView());
 		}
 		});
-		
+
 		root.getChildren().add(returnButton);
-		
+
 		return root;
 	}
 }
