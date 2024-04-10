@@ -34,7 +34,8 @@ public class PatientLookupPage extends GUIScene {
 					s = nameField.getText().split(" ",2);
 					System.out.print("\n\n\nFirst Name: " + s[0] +"\n\n\nLast name; " +s[1]);
 					User u = UserList.findUser(s[0], s[1]);
-					if(u.getUserType() == UserType.PATIENT && dobField.getValue() == u.getDateOfBirth()) {
+					
+					if(u.getUserType().equals(UserType.PATIENT) && dobField.getValue().isEqual(u.getDateOfBirth())) {
 						navigateTo(PersonalRecordsScreen.getView(u));
 					}
 						
@@ -50,10 +51,11 @@ public class PatientLookupPage extends GUIScene {
 		beginExam.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
 				String[] s = new String[2];
-				if(name.getText()!=null && name.getText().matches("^[A-Z]{1}[a-z]{1,}+ [A-Z]{1}[a-z]{1,}$")) {
-					s = name.getText().split(" ",2);
+				if(nameField.getText()!=null && nameField.getText().matches("^[A-Z]{1}[a-z]{1,}+ [A-Z]{1}[a-z]{1,}$")) {
+					s = nameField.getText().split(" ",2);
+					System.out.print("\n\n\nFirst Name: " + s[0] +"\n\n\nLast name; " +s[1]);
 					User u = UserList.findUser(s[0], s[1]);
-					if(u.getUserType() == UserType.PATIENT && dobField.getValue() == u.getDateOfBirth()) {
+					if(u.getUserType().equals(UserType.PATIENT) && dobField.getValue().isEqual(u.getDateOfBirth())) {
 						if(currentUser.getUserType() == UserType.DOCTOR) GUIScene.navigateTo(DoctorExamScreen.getView(u));
 						else navigateTo(NurseExamScreen.getView(u));
 					}
