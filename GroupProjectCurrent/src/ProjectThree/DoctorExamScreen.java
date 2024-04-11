@@ -34,6 +34,7 @@ public class DoctorExamScreen extends GUIScene{
 			public void handle(ActionEvent e) {
 				if(!diagnosisField.getText().equals("") &&
 						!prescriptionsField.getText().equals("")) {
+					p.getPreviousVisitInformation().get(0).setGeneralNotes(notesField.getText());
 					p.getPreviousVisitInformation().get(0).setDiagnosis(diagnosisField.getText());
 					p.getPreviousVisitInformation().get(0).setPrescriptions(prescriptionsField.getText());
 					p.getPreviousVisitInformation().get(0).setInstructions(instructionsField.getText());
