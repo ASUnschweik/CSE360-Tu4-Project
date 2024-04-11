@@ -33,7 +33,7 @@ public class LoginPage extends GUIScene{
 		
 		login.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e) {
-				if(emailField.getText().matches("^[a-zA-Z.]{1,}+[@]{1}+[a-zA-Z]{1,}+[.]{1}+[a-zA-Z]{2,4}$")
+				if(emailField.getText().matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$")
                         && passwordField.getText().matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,15}$")) {
                     String s1 = emailField.getText();
                     String s2 = passwordField.getText();
