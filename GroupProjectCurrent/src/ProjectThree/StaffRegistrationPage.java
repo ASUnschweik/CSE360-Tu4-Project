@@ -60,7 +60,7 @@ public class StaffRegistrationPage extends GUIScene{
         			User u = new User();
         			
         			s = emailField.getText();
-					if(s.matches("^[a-zA-Z.]{1,}+[@]{1}+[a-zA-Z]{1,}+[.]{1}+[a-zA-Z]{2,4}$")) {
+					if(s.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$")) {
 						if(UserList.emailTaken(s)) {
 							errorMessage.setText("Email is already taken");
 							return;
