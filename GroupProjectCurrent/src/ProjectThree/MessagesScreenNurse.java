@@ -73,13 +73,5 @@ public class MessagesScreenNurse extends GUIScene {
         return root;
     }
 
-    // Method to retrieve both sent and received messages for the nurse
-    private static ArrayList<Message> retrieveNurseMessages() {
-        ArrayList<Message> nurseMessages = new ArrayList<>();
 
-        // Assuming you have a method to retrieve both sent and received messages based on the current user
-        // Replace this with your logic to retrieve messages
-
-        return nurseMessages;
-    }
 }
